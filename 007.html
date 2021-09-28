@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function menuGlobal(item1, item2){
+      [item1, item2].forEach(function (el){
+        console.log("오늘 저녁은 " + el + this.name);
+      }, this);
+    }
+
+    var myDiner = {
+      name : "김치찌개"
+    }
+
+    var yourDiner = {
+      name : "된장찌개"
+    }
+
+    menuGlobal.apply(myDiner, ["묵은지", "삼겹살"]);
+
+    menuGlobal.apply(yourDiner, ["부두", "애호박"]);
+
+
+  </script>
+</body>
+</html>

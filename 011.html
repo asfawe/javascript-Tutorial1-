@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var func = function () {
+      var a = 1;
+      var b = 2;
+
+      var func2 = function() {
+        var b = 5;
+        var c = 6;
+
+        a = a+b+c;
+        console.log(a);
+      }
+      func2();
+    }
+
+    func();
+  </script>
+</body>
+</html>

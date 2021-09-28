@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function menuGlobal(item1, item2){
+      console.log(this);
+      [item1, item2].forEach((el) => { //원래 forEach함수 안에 있는 this는 전역변수를 바라보고 있지만  이 화살표를 함수에서 사용하므로서 this는 자기의 상위 스코프에 this를 바라본다.
+        console.log("오늘 저녁은 " + el + this.name);
+      }, this);
+    }
+
+    var myDiner = {
+      name : "김치찌개"
+    }
+
+    var yourDiner = {
+      name : "된장찌개"
+    }
+
+    menuGlobal.apply(myDiner, ["묵은지", "삼겹살"]);
+
+
+  </script>
+</body>
+</html>

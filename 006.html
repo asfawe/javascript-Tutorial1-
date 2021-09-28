@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // this를 조작 할 수 있는 첫번째 함수는 call() 이다.
+    function menuGlobal(item){
+      console.log("오늘 저녁은 " + item + this.name);
+    }
+
+    var myDiner = {
+      name : "김치찌개"
+    }
+
+    var yourDiner = {
+      name : "된장찌개"
+    }
+
+    menuGlobal.call(myDiner, "묵은지"); //call의 첫번째 인수로는 이 함수에서 this가 바라보는 객체를 적어주는 것이다.
+    menuGlobal.call(yourDiner, "삼겹살");
+  </script>
+</body>
+</html>
